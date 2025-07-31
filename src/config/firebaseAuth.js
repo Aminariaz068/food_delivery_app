@@ -3,8 +3,18 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
-console.log(import.meta.env.VITE_KEY)
-const firebaseConfig = JSON.parse(import.meta.env.VITE_KEY);
+// console.log(import.meta.env.VITE_KEY)
+const firebaseConfig = {
+  "apiKey": import.meta.env.VITE_APIKEY,
+  "authDomain": import.meta.env.VITE_AUTH,
+  "projectId": import.meta.env.VITE_PROID,
+  "storageBucket": import.meta.env.VITE_BUCKET,
+  "messagingSenderId": import.meta.env.VITE_SENDERID,
+  "appId": import.meta.env.VITE_APPID,
+  "measurementId": import.meta.env.VITE_MEASUREMENTID
+}
+
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
