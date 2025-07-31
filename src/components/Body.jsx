@@ -19,7 +19,7 @@ function Body() {
     async function fetchdata() {
   const data = await fetch(`${import.meta.env.VITE_BASE_URL}/restaurants/list/v5?lat=${lat}&lng=${lng}&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`);
   const res = await data.json();
-  console.log(res);
+//   console.log(res);
 // console.log(res?.data?.cards[0]?.card?.card?.imageGridCards?.info )
   
   let maindata = res?.data?.cards.find((data)=> data?.card?.card?.id== "top_brands_for_you")?.card
@@ -35,11 +35,11 @@ function Body() {
   let data2 = res?.data?.cards.find((data)=> data?.card?.card?.id== "whats_on_your_mind")
   ?.card?.card?.imageGridCards?.info
   setonyourmind(data2);
-  console.log(data2)
+//   console.log(data2)
 //   whats_on_your_mind
-restaurant_grid_listing_v2
 
-  console.log(maindata)
+
+//   console.log(maindata)
   settoprestitle(res?.data?.cards[1]?.card?.card?.header?.title)
   setonlinetitle(res?.data?.cards[2]?.card?.card?.title)
   setdata(res.data)
